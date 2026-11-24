@@ -1,0 +1,28 @@
+#Caso 1
+Estado inicial: 7621 3458
+=== Tabla comparativa ===
+Algoritmo              Profund.     Procesados   Generados    Esp.Max      Tiempo(s) 
+Anchura (BFS)          18           21561        77763        17060        0.1099    
+Profundidad (DFS)      6202         6263         18107        5009         0.0260    
+Costo Uniforme (UCS)   18           22702        46315        17093        0.0922    
+Prof. Limitada (DLS)   26           33093        55947        27           0.0470    
+Iterativa (IDS)        26           33093        55947        27           0.0224    
+
+#Caso 2
+Estado inicial: 524 73618
+=== Tabla comparativa ===
+Algoritmo              Profund.     Procesados   Generados    Esp.Max      Tiempo(s) 
+Anchura (BFS)          19           40426        154201       26619        0.1533    
+Profundidad (DFS)      91013        106847       301645       69905        0.2022    
+Costo Uniforme (UCS)   19           34225        70185        23872        0.1127    
+Prof. Limitada (DLS)   No encontrado 9839         16857        25           0.0155    
+Iterativa (IDS)        31           27335        47444        30           0.0110    
+
+Conclusion
+En ambos casos de prueba, BFS y Costo Uniforme coincidieron en la 
+profundidad óptima de la solución, lo que confirma que ambos garantizan el camino más corto cuando todos los movimientos cuestan lo mismo. 
+Sin embargo, son muy exigentes en memoria, alcanzando un espacio máximo de entre 17,060 y 26,619 nodos en frontera.
+DFS en el caso 1 fue rapido con .0260 s pero con una profundidad grande de 6202, en el caso 2 es mas lemto con 0.2022 y consumio
+mas memoria 69,905 nodos. En la profundidad limitada se comprobó que su éxito depende totalmente de elegir un límite adecuado: funcionó en el Caso 1 profundidad 26, 
+pero falló en el Caso 2 al no alcanzar la meta dentro del límite fijado. Por último, la Búsqueda Iterativa demostró ser la más equilibrada y rápida en ambos casos 0.0224 s y 0.0110 s, 
+logrando encontrar la solución sin necesidad de adivinar el límite y manteniendo un consumo de memoria mínimo
